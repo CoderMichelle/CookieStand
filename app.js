@@ -24,13 +24,13 @@ let seattle = {
     }
   },
 }
-
 seattle.calcCookiesSoldPerHour();
-let seattle = {
-  name: 'Seattle',
-  minimumCustomerEachHour: 23,
-  maximumCustomerEachHour: 65,
-  averageCookiesSoldEachHour: 6.3,
+
+let tokyo = {
+  name: 'Tokyo',
+  minimumCustomerEachHour: 3,
+  maximumCustomerEachHour: 24,
+  averageCookiesSoldEachHour: 1.2,
   CookiesSoldPerHourArray: [],
   dailyStoreTotal: 0,
   randomCustomersPerHour: function () {
@@ -48,12 +48,13 @@ let seattle = {
   },
 }
 
-seattle.calcCookiesSoldPerHour();
-let seattle = {
-  name: 'Seattle',
-  minimumCustomerEachHour: 23,
-  maximumCustomerEachHour: 65,
-  averageCookiesSoldEachHour: 6.3,
+tokyo.calcCookiesSoldPerHour();
+
+let dubai = {
+  name: 'Dubai',
+  minimumCustomerEachHour: 11,
+  maximumCustomerEachHour: 38,
+  averageCookiesSoldEachHour: 3.7,
   CookiesSoldPerHourArray: [],
   dailyStoreTotal: 0,
   randomCustomersPerHour: function () {
@@ -70,13 +71,13 @@ let seattle = {
     }
   },
 }
+dubai.calcCookiesSoldPerHour();
 
-seattle.calcCookiesSoldPerHour();
-let seattle = {
-  name: 'Seattle',
-  minimumCustomerEachHour: 23,
-  maximumCustomerEachHour: 65,
-  averageCookiesSoldEachHour: 6.3,
+let paris = {
+  name: 'Paris',
+  minimumCustomerEachHour: 20,
+  maximumCustomerEachHour: 38,
+  averageCookiesSoldEachHour: 2.3,
   CookiesSoldPerHourArray: [],
   dailyStoreTotal: 0,
   randomCustomersPerHour: function () {
@@ -93,13 +94,13 @@ let seattle = {
     }
   },
 }
+paris.calcCookiesSoldPerHour();
 
-seattle.calcCookiesSoldPerHour();
-let seattle = {
-  name: 'Seattle',
-  minimumCustomerEachHour: 23,
-  maximumCustomerEachHour: 65,
-  averageCookiesSoldEachHour: 6.3,
+let lima = {
+  name: 'Lima',
+  minimumCustomerEachHour: 2,
+  maximumCustomerEachHour: 16,
+  averageCookiesSoldEachHour: 4.6,
   CookiesSoldPerHourArray: [],
   dailyStoreTotal: 0,
   randomCustomersPerHour: function () {
@@ -116,5 +117,19 @@ let seattle = {
     }
   },
 }
+lima.calcCookiesSoldPerHour();
 
-seattle.calcCookiesSoldPerHour();
+// console.log(lima.CookiesSoldPerHourArray);
+
+// grabbing onto an html element, filling it with data, then appending that element to its parent
+var resultsElement = document.getElementById('sales');
+var ulElement = document.createElement('ul');
+resultsElement.appendChild(ulElement);
+
+for (var i = 0; i < lima.CookiesSoldPerHourArray.length; i++) {
+  var liElement = document.createElement('li');
+  liElement.textContent = lima.CookiesSoldPerHourArray[i];
+  ulElement.appendChild(liElement);
+}
+
+
