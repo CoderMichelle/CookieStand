@@ -26,6 +26,8 @@ let seattle = {
 }
 seattle.calcCookiesSoldPerHour();
 
+console.log(seattle.CookiesSoldPerHourArray);
+
 let tokyo = {
   name: 'Tokyo',
   minimumCustomerEachHour: 3,
@@ -50,6 +52,8 @@ let tokyo = {
 
 tokyo.calcCookiesSoldPerHour();
 
+console.log(tokyo.CookiesSoldPerHourArray);
+
 let dubai = {
   name: 'Dubai',
   minimumCustomerEachHour: 11,
@@ -72,6 +76,8 @@ let dubai = {
   },
 }
 dubai.calcCookiesSoldPerHour();
+
+console.log(dubai.CookiesSoldPerHourArray);
 
 let paris = {
   name: 'Paris',
@@ -96,6 +102,8 @@ let paris = {
 }
 paris.calcCookiesSoldPerHour();
 
+console.log(paris.CookiesSoldPerHourArray);
+
 let lima = {
   name: 'Lima',
   minimumCustomerEachHour: 2,
@@ -119,17 +127,35 @@ let lima = {
 }
 lima.calcCookiesSoldPerHour();
 
-// console.log(lima.CookiesSoldPerHourArray);
+console.log(lima.CookiesSoldPerHourArray);
+let storesArr = [seattle, tokyo, dubai, paris, lima]
 
 // grabbing onto an html element, filling it with data, then appending that element to its parent
 var resultsElement = document.getElementById('sales');
-var ulElement = document.createElement('ul');
-resultsElement.appendChild(ulElement);
 
-for (var i = 0; i < lima.CookiesSoldPerHourArray.length; i++) {
+for (var j = 0; j < storesArr.length; j++) {
+  var ulElement = document.createElement('ul');
+  resultsElement.appendChild(ulElement);
+
   var liElement = document.createElement('li');
-  liElement.textContent = lima.CookiesSoldPerHourArray[i];
+  liElement.textContent = storesArr[j].name;
   ulElement.appendChild(liElement);
+
+  for (var i = 0; i < storesArr[j].CookiesSoldPerHourArray.length; i++) {
+    var liElement = document.createElement('li');
+    liElement.textContent = `${hours[i]}: ${storesArr[j].CookiesSoldPerHourArray[i]} cookies`;
+    ulElement.appendChild(liElement);
+
+  }
+  var liElement = document.createElement('li');
+  liElement.textContent = `Total: ${storesArr[j].dailyStoreTotal} cookies`;
+  ulElement.appendChild(liElement);
+
+
+
+
 }
+
+
 
 
