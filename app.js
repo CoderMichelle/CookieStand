@@ -2,6 +2,10 @@
 
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
+let cookieTable = document.getElementById('cookie-table')
+cookieTable.textContent = 'this is my table';
+let resultsElement = document.createElement('div')
+cookieTable.appendChild(resultsElement);
 
 let seattle = {
   name: 'Seattle',
@@ -128,10 +132,9 @@ let lima = {
 lima.calcCookiesSoldPerHour();
 
 console.log(lima.CookiesSoldPerHourArray);
-let storesArr = [seattle, tokyo, dubai, paris, lima]
+let storesArr = [seattle, tokyo, dubai, paris, lima];
 
 // grabbing onto an html element, filling it with data, then appending that element to its parent
-var resultsElement = document.getElementById('sales');
 
 for (var j = 0; j < storesArr.length; j++) {
   var ulElement = document.createElement('ul');
@@ -151,11 +154,19 @@ for (var j = 0; j < storesArr.length; j++) {
   liElement.textContent = `Total: ${storesArr[j].dailyStoreTotal} cookies`;
   ulElement.appendChild(liElement);
 
-
-
-
 }
 
 
+//constructor Function:
 
-
+function cookieStand(name, minCust, maxCust, avgCookies) {
+  this.name = name;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookies = avgCookies;
+  this.openHours = hoursOfOperation;
+  this.totalCookiesPerDay = 0;
+  this.arrayOfHourlyCookies = [];
+  locationNames.push(this);
+}
+//cookieStand.prototype
