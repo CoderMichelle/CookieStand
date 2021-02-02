@@ -22,14 +22,17 @@ table {
   border: 1px solid black;
   background-color: pink;
   margin: 0 100px;
+  padding: 3px 0;
+
 
 
 }
 
-tr:nth-child(odd) {
+tbody tr:nth-child(odd) {
   background-color: antiquewhite;
 }
 
 td {
   text-align: center;
+  padding: 2px 0;
 }
