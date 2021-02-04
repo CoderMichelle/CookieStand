@@ -1,14 +1,194 @@
-a {
-padding: 84px;
-background-color: black;
-color: wheat;
+body {
+  background-color: rgb(241, 222, 216);
 }
 
-ul {
-  display: inline-block;
-  max-width: 200px;
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  background-color:pink;
+  padding: 1.0rem 0;
+}
+h1, h2, h3 {
+  font-family: 'Roboto Slab', serif;
+}
+li {
   list-style: none;
 }
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+nav {
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  width: 100vw;
+  background-color: pink;
+  margin-top: 0;
+  border-bottom: rgb(106, 110, 103) solid 8px;
+  /* z-index: 5; */
+}
+
+nav span {
+  /* display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; */
+  text-align: center;
+  display: inline-block;
+  margin: 12px 100px;
+  font-size: 24px;
+}
+
+a:hover {
+  color: #fff;
+}
+
+main {
+  width: 1200px;
+  margin: 0 auto;
+  border: white solid 1px;
+  position: relative;
+  background-color: white;
+}
+
+.salmonpics {
+ display: flex; 
+ width: 100%;
+ margin: 15px 0;
+}
+
+.salmonpics img {
+  width: 48%
+}
+
+h2 {
+  text-align: center;
+  margin: 24px 0;
+  font-size: 36px;
+}
+
+main img {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  margin-bottom: 24px;
+}
+
+ p {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: large;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+#fishpix {
+  display: block;
+  margin: 0 auto;
+  /* margin-bottom: 24px; */
+}
+
+#fishpix img {
+  border-radius: 10px;
+  display: inline;
+  width: 300px;
+  margin: 5px;
+  border: 2px solid rgb(197, 190, 190);
+  padding: 20px;
+
+}
+
+#fishpix img:nth-child(1) {
+  margin-left: 72px;
+  margin-bottom: 24px;
+}
+
+#fishpix img:nth-child(2) {
+  margin-bottom: 60px;
+  background-color: rgb(192, 190, 190);
+}
+
+section h3 {
+  text-align: center;
+  margin: 20px 0 30px 0;
+  font-size: 26px;
+}
+
+section img {
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* .storescontainer {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+} */
+
+#stores {
+  display: block;
+  margin: 0 auto;
+}
+
+#stores ul {
+  display: inline-block;
+  width: 230px;
+  margin-bottom: 24px;
+}
+
+#stores ul:last-child {
+  margin-right: 24px;
+
+}
+
+
+#stores ul li {
+  font-size: large;
+  padding: 0;
+  text-align: center;
+   width: 350px;
+}
+.tshirt h3 {
+  text-align: center;
+  margin: 24px;
+  font-size: 26px;
+}
+.tshirt img {
+  display: block;
+  margin: 0 auto;
+}
+
+footer {
+  margin-top: 24px;
+}
+
+footer p {
+  margin: 12px auto;
+  text-align: center;
+}
+
+/* sales page styling  */
+
+#salesNavBar {
+  display: block;
+  margin: 0 auto;
+}
+
+#salesNavBar span {
+  display: inline-block;
+  width: 200px;
+  /* background-color: purple; */
+}
+
+#salesNavBar span:first-child {
+  margin-left: calc(50vw - 330px);
+}
+
 h2 { 
   text-align: center;
 }
@@ -22,10 +202,7 @@ table {
   border: 1px solid black;
   background-color: pink;
   margin: 0 100px;
-  padding: 3px 0;
-
-
-
+  padding: 10px 0;
 }
 
 tbody tr:nth-child(odd) {
@@ -36,3 +213,5 @@ td {
   text-align: center;
   padding: 2px 0;
 }
+
+
