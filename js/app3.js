@@ -47,7 +47,6 @@ CookieStand.prototype.calcCustPerHour = function () {
   let custPerHour = Math.floor((Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
   return custPerHour;
   console.log('here is a consolelog');
-
 }
 
 CookieStand.prototype.calcCookiesSoldPerHour = function () {
