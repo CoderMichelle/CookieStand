@@ -10,5 +10,7 @@ Links I used as reference:
 link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 Reflections and Comments:
 2-01-21 I had my first big break and my first NaN experience tonight when attempting to make change to my code in the format with which the TA said to use.
+2-02-21 Finished the indexhtml page/lab08b for Salmon Cookie Stand.
 Consider including the answers to your daily journal and submission questions here
-This is also a good place to reflect on the tools and resources used and learned
+This is also a good place to reflect on the tools and resources used and learned.
+
