@@ -44,7 +44,7 @@ function CookieStand(name, minCust, maxCust, avgCookies) {
 
 CookieStand.prototype.calcCustPerHour = function () {
 
-  let custPerHour = Math.floor((Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
+  let custPerHour = Math.ceil((((Math.random() + 1) * (this.maxCust - this.minCust)) + this.minCust));
   return custPerHour;
   console.log('here is a consolelog');
 }
@@ -99,7 +99,7 @@ paris.renderTable();
 let lima = new CookieStand('Lima', 2, 16, 4.6);
 lima.calcCookiesSoldPerHour();
 lima.renderTable();
-console.log(seattle);
+// console.log(seattle);
 
 // let storesArr = [seattle, tokyo, dubai, paris, lima];
 // printResultsAsLi();
@@ -147,7 +147,7 @@ let renderFooterRow = function () {
     thElement.textContent = allLocTotalHourly;
     dayTotalOfTotals += allLocTotalHourly;
 
-    console.log(allLocTotalHourly);
+    // console.log(allLocTotalHourly);
     trElem.appendChild(thElement);
     tfootElem.appendChild(trElem);
   }
@@ -160,4 +160,36 @@ let renderFooterRow = function () {
 
 renderFooterRow();
 
+// event Listener for input form
+var formElement = document.getElementById('newStoreInputForm')
+
+formElement.addEventListener('submit', function (event) {
+  event.preventDefault();
+  var name = event.target.newStoreLocation.value
+  // console.log(name);
+  var minCust = event.target.minCust.value
+  // console.log(minCust);
+  var maxCust = event.target.maxCust.value
+  // console.log(maxCust);
+  var avgCookies = event.target.avgCookies.value
+  // console.log(avgCookies);
+
+  var newStoreFromConstructor = new CookieStand(name, minCust, maxCust, avgCookies)
+
+  // storesArr.push(newStoreFromConstructor);
+
+  console.log(storesArr);
+
+  newStoreFromConstructor.calcCookiesSoldPerHour();
+
+  var removeEl = document.getElementsByTagName('tr')[storesArr.length];
+  console.log(removeEl);
+  var containerEl = removeEl.parentNode;
+  containerEl.removeChild(removeEl);
+
+  newStoreFromConstructor.renderTable();
+
+  renderFooterRow();
+
+})
 

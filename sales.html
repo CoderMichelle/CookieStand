@@ -15,14 +15,25 @@
       <span><a href="sales.html">Refresh Sales Table</a></span>
     </nav>
   </header>
-
-
-
   <h2>Sales Results For Each Location</h2>
   <table id="cookie-table">
-
-
   </table>
+  <section>
+    <form action="" id="newStoreInputForm">
+      <fieldset>
+        <legend>New Cookie Stores Input Form</legend>
+        <label for="newStoreLocationLabel">store location</label><br>
+        <input type="text" name="newStoreLocation" id="newStoreLocationLabel"><br>
+        <label for="minCustLabel">minimum customers per hour</label><br>
+        <input type="text" name="minCust" id="minCustLabel"><br>
+        <label for="maxCustLabel">maximum customers per hour</label><br>
+        <input type="text" name="maxCust" id="maxCustLabel"><br>
+        <label for="avgCookiesLabel">average cookies sold per customer</label><br>
+        <input type="text" name="avgCookies" id="avgCookiesLabel"><br>
+        <input type="submit" name="submit" value="Submit New Store Location" class="inputBtn">
+      </fieldset>
+    </form>
+  </section>
   <script src="js/app3.js"></script>
 </body>
 
