@@ -13,4 +13,4 @@ Reflections and Comments:
 2-02-21 Finished the indexhtml page/lab08b for Salmon Cookie Stand.
 Consider including the answers to your daily journal and submission questions here
 This is also a good place to reflect on the tools and resources used and learned.
-
+2-06-21 added and completed a new store form to the sales html page.

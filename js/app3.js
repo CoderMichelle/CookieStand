@@ -38,33 +38,30 @@ function CookieStand(name, minCust, maxCust, avgCookies) {
   this.openHours = hours;
   this.dailyStoreTotal = 0;
   this.cookiesSoldPerHourArray = [];
-  // locationNames.push(this);
   storesArr.push(this);
+  this.calcCookiesSoldPerHour();
+  this.renderTable();
 }
 
 CookieStand.prototype.calcCustPerHour = function () {
 
-  let custPerHour = Math.ceil((((Math.random() + 1) * (this.maxCust - this.minCust)) + this.minCust));
+  let custPerHour = ((Math.random()) * (this.maxCust - this.minCust)) + this.minCust;
   return custPerHour;
-  console.log('here is a consolelog');
-}
+};
 
 CookieStand.prototype.calcCookiesSoldPerHour = function () {
 
   for (let i = 0; i < hours.length; i++) {
     let hourlyCookieSale = Math.ceil(this.avgCookies * this.calcCustPerHour());
-    console.log(this.maxCust);
     this.cookiesSoldPerHourArray.push(hourlyCookieSale);
     this.dailyStoreTotal = this.dailyStoreTotal + hourlyCookieSale;
   }
-}
-//above came from math.random
+};
 
 let tbodyElem = document.createElement('tbody');
 cookieTable.appendChild(tbodyElem);
 
 CookieStand.prototype.renderTable = function () {
-
   let trElem = document.createElement('tr');
   let thElem = document.createElement('th');
   thElem.textContent = this.name;
@@ -81,28 +78,8 @@ CookieStand.prototype.renderTable = function () {
   trElem.appendChild(thElement);
   tbodyElem.appendChild(trElem);
   cookieTable.appendChild(tbodyElem);
-}
+};
 
-//instantiations - OBJECTS ARE CREATED WITH CONSTRUCTOR
-let seattle = new CookieStand('Seattle', 23, 65, 6.3);
-seattle.calcCookiesSoldPerHour();
-seattle.renderTable();
-let tokyo = new CookieStand('Tokyo', 3, 24, 1.2);
-tokyo.calcCookiesSoldPerHour();
-tokyo.renderTable();
-let dubai = new CookieStand('Dubai', 11, 38, 3.7);
-dubai.calcCookiesSoldPerHour();
-dubai.renderTable();
-let paris = new CookieStand('Paris', 20, 38, 2.3);
-paris.calcCookiesSoldPerHour();
-paris.renderTable();
-let lima = new CookieStand('Lima', 2, 16, 4.6);
-lima.calcCookiesSoldPerHour();
-lima.renderTable();
-// console.log(seattle);
-
-// let storesArr = [seattle, tokyo, dubai, paris, lima];
-// printResultsAsLi();
 let theadElem = document.createElement('thead');
 cookieTable.appendChild(theadElem);
 
@@ -123,9 +100,17 @@ let renderHeaderRow = function () {
   trElem.appendChild(thElement);
   theadElem.appendChild(trElem);
   cookieTable.appendChild(theadElem);
-}
+};
 
 renderHeaderRow();
+
+//instantiations - OBJECTS ARE CREATED WITH CONSTRUCTOR
+new CookieStand('Seattle', 23, 65, 6.3);
+new CookieStand('Tokyo', 3, 24, 1.2);
+new CookieStand('Dubai', 11, 38, 3.7);
+new CookieStand('Paris', 20, 38, 2.3);
+new CookieStand('Lima', 2, 16, 4.6);
+console.log(storesArr);
 
 let tfootElem = document.createElement('tfoot');
 cookieTable.appendChild(tfootElem);
@@ -146,8 +131,6 @@ let renderFooterRow = function () {
     }
     thElement.textContent = allLocTotalHourly;
     dayTotalOfTotals += allLocTotalHourly;
-
-    // console.log(allLocTotalHourly);
     trElem.appendChild(thElement);
     tfootElem.appendChild(trElem);
   }
@@ -156,40 +139,23 @@ let renderFooterRow = function () {
   trElem.appendChild(thElement);
   tfootElem.appendChild(trElem);
   cookieTable.appendChild(tfootElem);
-}
+};
 
 renderFooterRow();
 
-// event Listener for input form
-var formElement = document.getElementById('newStoreInputForm')
+var formElement = document.getElementById('newStoreInputForm');
 
-formElement.addEventListener('submit', function (event) {
+function handleSubmit(event) {
   event.preventDefault();
-  var name = event.target.newStoreLocation.value
-  // console.log(name);
-  var minCust = event.target.minCust.value
-  // console.log(minCust);
-  var maxCust = event.target.maxCust.value
-  // console.log(maxCust);
-  var avgCookies = event.target.avgCookies.value
-  // console.log(avgCookies);
-
-  var newStoreFromConstructor = new CookieStand(name, minCust, maxCust, avgCookies)
-
-  // storesArr.push(newStoreFromConstructor);
-
+  var name = event.target.newStoreLocation.value;
+  var minCust = +event.target.minCust.value;
+  var maxCust = +event.target.maxCust.value;
+  var avgCookies = +event.target.avgCookies.value;
+  new CookieStand(name, minCust, maxCust, avgCookies);
   console.log(storesArr);
-
-  newStoreFromConstructor.calcCookiesSoldPerHour();
-
-  var removeEl = document.getElementsByTagName('tr')[storesArr.length];
-  console.log(removeEl);
-  var containerEl = removeEl.parentNode;
-  containerEl.removeChild(removeEl);
-
-  newStoreFromConstructor.renderTable();
-
+  var removeEl = document.getElementsByTagName('tfoot')[0];
+  removeEl.removeChild(removeEl.firstChild);
   renderFooterRow();
-
-})
+}
+formElement.addEventListener('submit', handleSubmit);
 
