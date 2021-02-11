@@ -11,6 +11,7 @@ h1 {
 }
 h1, h2, h3 {
   font-family: 'Roboto Slab', serif;
+  color: #444;
 }
 li {
   list-style: none;
@@ -82,7 +83,9 @@ main img {
   width: 80%;
   text-align: center;
   margin: 0 auto;
+  font-family: Georgia, Times, 'Times New Roman', serif;
   font-size: large;
+  color: #111;
   line-height: 24px;
   margin-bottom: 24px;
 }
@@ -199,6 +202,7 @@ body {
 }
 
 table {
+  font-family: Arial, Helvetica, sans-serif;
   border: 1px solid black;
   background-color: pink;
   margin: 0 100px;
@@ -209,9 +213,13 @@ tbody tr:nth-child(odd) {
   background-color: antiquewhite;
 }
 
-td {
+td, th {
   text-align: center;
-  padding: 2px 0;
+  padding: 4px 0;
+}
+th {
+  font-weight: bold;
+  color: rgb(70, 63, 63);
 }
 
 /* input form styling */
@@ -225,7 +233,7 @@ td {
 }
 #newStoreInputForm fieldset {
   width: 550px;
-  background-color:cadetblue;
+  background-color:rgb(106, 110, 103);
   margin: 0 auto;
   border: 1px solid black;
   border-radius: 10px;
@@ -234,16 +242,18 @@ td {
 }
 
 #newStoreInputForm legend {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
   background-color: rgb(245, 171, 146);
   border: 1px solid black;
   border-radius: 10px;
-  padding: 8px 20px;
+  padding: 4px 10px;
   margin-bottom: -10px;
 }
 
 #newStoreInputForm label {
   /* float: left; */
-
+  color: white;
   font-size: 1.2rem;
   /* padding: 20px 0; */
 }
@@ -258,8 +268,8 @@ td {
 }
 
 input:last-child {
-  background-color: rgb(161, 219, 202);
+  background-color: rgb(245, 171, 146);
   padding: 20px 30px;
-  font-size: 35px;
+  font-size: 10px;
 }
 
